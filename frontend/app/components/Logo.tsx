@@ -6,7 +6,7 @@ export default function Logo({ size = 44 }: { size?: number }) {
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Race Intel logo"
+      aria-label="Parabolica logo"
     >
       {/* Outer ring - speedometer style */}
       <circle

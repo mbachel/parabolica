@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const THEME_KEY = "race-intel-theme";
+const THEME_KEY = "parabolica-theme";
 
 type ThemeMode = "dark" | "light";
 
