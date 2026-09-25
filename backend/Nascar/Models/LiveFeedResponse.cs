@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Nascar.Models;
+namespace Parabolica.Api.Nascar.Models;
 
 using System.Text.Json;
 using System.Text.Json.Serialization;

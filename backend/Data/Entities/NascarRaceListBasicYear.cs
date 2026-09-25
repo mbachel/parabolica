@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Data.Entities;
+namespace Parabolica.Api.Data.Entities;
 
 /// <summary>Represents a stored NASCAR race list basic snapshot for a season.</summary>
 public class NascarRaceListBasicYear

@@ -1,16 +1,16 @@
-namespace RaceIntel.Api.Admin.Import;
+namespace Parabolica.Api.Admin.Import;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RaceIntel.Api.Data;
-using RaceIntel.Api.Data.Entities;
-using RaceIntel.Api.Nascar.Services;
+using Parabolica.Api.Data;
+using Parabolica.Api.Data.Entities;
+using Parabolica.Api.Nascar.Services;
 
 /// <summary>Imports NASCAR historical data into the database.</summary>
 [Route("api/admin/import/nascar")]
 public class NascarImportController : AdminControllerBase
 {
-    private readonly RaceIntelDbContext _db;
+    private readonly ParabolicaDbContext _db;
     private readonly NascarHistoricalApiClient _historical;
     private readonly ILogger<NascarImportController> _logger;
     
@@ -19,7 +19,7 @@ public class NascarImportController : AdminControllerBase
     /// <param name="historical">Historical NASCAR API client.</param>
     /// <param name="logger">Logger for import operations.</param>
     public NascarImportController(
-        RaceIntelDbContext db, 
+        ParabolicaDbContext db, 
         NascarHistoricalApiClient historical, 
         ILogger<NascarImportController> logger)
     {

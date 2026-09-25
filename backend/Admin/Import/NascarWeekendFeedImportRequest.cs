@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Admin.Import;
+namespace Parabolica.Api.Admin.Import;
 
 /// <summary>Represents a request to import weekend feed data for a race.</summary>
 /// <param name="Year">Season year to import.</param>

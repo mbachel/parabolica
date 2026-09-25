@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Nascar.Services;
+namespace Parabolica.Api.Nascar.Services;
 
 /// <summary>Background service that polls the live feed when races are active.</summary>
 public class NascarPollingService : BackgroundService

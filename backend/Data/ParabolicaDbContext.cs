@@ -1,14 +1,14 @@
-namespace RaceIntel.Api.Data;
+namespace Parabolica.Api.Data;
 
 using Microsoft.EntityFrameworkCore;
-using RaceIntel.Api.Data.Entities;
+using Parabolica.Api.Data.Entities;
 
-/// <summary>Entity Framework Core context for RaceIntel data storage.</summary>
-public class RaceIntelDbContext : DbContext
+/// <summary>Entity Framework Core context for Parabolica data storage.</summary>
+public class ParabolicaDbContext : DbContext
 {
-    /// <summary>Initializes a new instance of the <see cref="RaceIntelDbContext"/> class.</summary>
+    /// <summary>Initializes a new instance of the <see cref="ParabolicaDbContext"/> class.</summary>
     /// <param name="options">EF Core context options.</param>
-    public RaceIntelDbContext(DbContextOptions<RaceIntelDbContext> options) : base(options) { }
+    public ParabolicaDbContext(DbContextOptions<ParabolicaDbContext> options) : base(options) { }
 
     /// <summary>Gets the NASCAR race list basic yearly snapshots.</summary>
     public DbSet<NascarRaceListBasicYear> NascarRaceListBasicYears => Set<NascarRaceListBasicYear>();

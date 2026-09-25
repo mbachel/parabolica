@@ -1,6 +1,6 @@
-namespace RaceIntel.Api.Nascar.Services;
+namespace Parabolica.Api.Nascar.Services;
 
-using RaceIntel.Api.Nascar.Models;
+using Parabolica.Api.Nascar.Models;
 
 /// <summary>Caches the latest NASCAR live feed snapshot for quick access.</summary>
 public class NascarCacheService

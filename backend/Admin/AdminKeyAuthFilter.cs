@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Admin;
+namespace Parabolica.Api.Admin;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

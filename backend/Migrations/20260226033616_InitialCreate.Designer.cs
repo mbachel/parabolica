@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using RaceIntel.Api.Data;
+using Parabolica.Api.Data;
 
 #nullable disable
 
-namespace RaceIntel.Api.Migrations
+namespace Parabolica.Api.Migrations
 {
-    [DbContext(typeof(RaceIntelDbContext))]
+    [DbContext(typeof(ParabolicaDbContext))]
     [Migration("20260226033616_InitialCreate")]
     partial class InitialCreate
     {
@@ -25,7 +25,7 @@ namespace RaceIntel.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("RaceIntel.Api.Data.Entities.NascarRaceListBasicYear", b =>
+            modelBuilder.Entity("Parabolica.Api.Data.Entities.NascarRaceListBasicYear", b =>
                 {
                     b.Property<int>("Year")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace RaceIntel.Api.Migrations
                     b.ToTable("nascar_race_list_basic_year", (string)null);
                 });
 
-            modelBuilder.Entity("RaceIntel.Api.Data.Entities.NascarWeekendFeed", b =>
+            modelBuilder.Entity("Parabolica.Api.Data.Entities.NascarWeekendFeed", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
