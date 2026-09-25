@@ -7,8 +7,7 @@ node_modules/
 
 # Next.js build output (monorepo)
 **/.next/
-frontend/race-intel/.next/
-frontend/race-intel/out/
+frontend/out/
 
 # Logs
 npm-debug.log*

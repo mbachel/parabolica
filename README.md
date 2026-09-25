@@ -1,6 +1,8 @@
-# RaceIntel
+# Parabolica
 
-RaceIntel is a real-time racing statistics platform providing live telemetry, driver tracking, and performance analytics for NASCAR and Formula 1.
+Parabolica is a real-time racing statistics platform providing driver tracking and performance analytics for NASCAR and Formula 1.
+
+**Project site:** [parabolica.dev](https://parabolica.dev)
 
 ## 🏁 Overview
 
@@ -55,7 +57,11 @@ The platform aggregates data from various racing APIs, providing a centralized d
 
 ### Quick Start with Docker
 
-1. Clone the repository.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mbachel/parabolica.git
+   cd parabolica
+   ```
 2. Copy `.env.example` to `.env` and configure your environment variables (e.g., `Admin__Key`, `POSTGRES_PASSWORD`).
 3. Run the following command:
    ```bash
@@ -63,8 +69,8 @@ The platform aggregates data from various racing APIs, providing a centralized d
    ```
 4. Access the applications:
    - **Frontend:** [http://localhost](http://localhost)
-   - **Backend API:** [http://localhost:8080](http://localhost:8080)
-   - **NASCAR Live Feed:** [http://localhost:8080/api/nascar/live](http://localhost:8080/api/nascar/live)
+   - **Backend API:** [https://localhost/api/](https://localhost/api/)
+   - **NASCAR Live Feed:** [https://localhost/api/nascar/live](https://localhost/api/nascar/live)
 
 ## ✨ Features
 
