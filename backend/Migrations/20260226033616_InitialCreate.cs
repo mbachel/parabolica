@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace RaceIntel.Api.Migrations
+namespace Parabolica.Api.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

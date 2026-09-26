@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Nascar.Services;
+namespace Parabolica.Api.Nascar.Services;
 
 /// <summary>Fetches historical NASCAR data from the public API.</summary>
 public class NascarHistoricalApiClient

@@ -1,4 +1,4 @@
-namespace RaceIntel.Api.Data.Entities;
+namespace Parabolica.Api.Data.Entities;
 
 /// <summary>Represents a stored NASCAR weekend feed snapshot for a race.</summary>
 public class NascarWeekendFeed

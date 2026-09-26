@@ -1,0 +1,6 @@
+@Parabolica.Api_HostAddress = http://localhost:8080
+
+GET {{Parabolica.Api_HostAddress}}/api/nascar/live
+Accept: application/json
+
+###

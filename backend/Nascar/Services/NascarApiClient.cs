@@ -1,7 +1,7 @@
-namespace RaceIntel.Api.Nascar.Services;
+namespace Parabolica.Api.Nascar.Services;
 
 using System.Text.Json;
-using RaceIntel.Api.Nascar.Models;
+using Parabolica.Api.Nascar.Models;
 
 /// <summary>Fetches live NASCAR feed data from the public API.</summary>
 public class NascarApiClient

@@ -1,6 +1,6 @@
-namespace RaceIntel.Api.Nascar.Services;
+namespace Parabolica.Api.Nascar.Services;
 
-using RaceIntel.Api.Nascar.Models;
+using Parabolica.Api.Nascar.Models;
 
 /// <summary>Detects live NASCAR race activity based on feed changes.</summary>
 public class NascarLiveRaceDetector

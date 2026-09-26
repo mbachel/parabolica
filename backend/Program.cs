@@ -1,6 +1,6 @@
-using RaceIntel.Api.Nascar.Services;
-using RaceIntel.Api.Admin;
-using RaceIntel.Api.Data;
+using Parabolica.Api.Nascar.Services;
+using Parabolica.Api.Admin;
+using Parabolica.Api.Data;
 using Microsoft.EntityFrameworkCore;
 
 //=== BUILD PHASE BEGIN ===
@@ -17,7 +17,7 @@ builder.Services.AddScoped<AdminKeyAuthFilter>();
 builder.Services.AddSingleton<NascarCacheService>();
 builder.Services.AddSingleton<NascarLiveRaceDetector>();
 builder.Services.AddHostedService<NascarPollingService>();
-builder.Services.AddDbContext<RaceIntelDbContext>(options =>
+builder.Services.AddDbContext<ParabolicaDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -42,7 +42,7 @@ var app = builder.Build();
 //auto-apply EF core migrations on startup
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<RaceIntelDbContext>();
+    var db = scope.ServiceProvider.GetRequiredService<ParabolicaDbContext>();
     db.Database.Migrate();
 }
 

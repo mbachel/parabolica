@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-COPY RaceIntel.Api.csproj ./
+COPY Parabolica.Api.csproj ./
 RUN dotnet restore
 
 COPY . .
@@ -12,4 +12,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "RaceIntel.Api.dll"]
+ENTRYPOINT ["dotnet", "Parabolica.Api.dll"]

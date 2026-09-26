@@ -5,7 +5,7 @@ import Logo from "./components/Logo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Race Intel",
+  title: "Parabolica",
   description: "Live F1 and NASCAR data and analytics dashboards.",
 };
 
@@ -30,7 +30,7 @@ export default function RootLayout({
             <Link className="app-brand" href="/">
               <Logo size={48} />
               <div className="brand-copy">
-                <span className="brand-title">Race Intel</span>
+                <span className="brand-title">Parabolica</span>
                 <span className="brand-sub muted">
                   F1 and NASCAR analytics hub
                 </span>

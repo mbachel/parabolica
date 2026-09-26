@@ -1,7 +1,7 @@
-namespace RaceIntel.Api.Nascar;
+namespace Parabolica.Api.Nascar;
 
 using Microsoft.AspNetCore.Mvc;
-using RaceIntel.Api.Nascar.Services;
+using Parabolica.Api.Nascar.Services;
 
 /// <summary>Exposes NASCAR live feed endpoints.</summary>
 [ApiController]
