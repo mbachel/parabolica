@@ -56,8 +56,9 @@ Details and status: Master Plan.
 ## 5. How we work
 
 - **Branches:**
-  - Each of us develops on our own branch (`matthew`, `soumil`), made from the latest `main`.
-  - To merge, open a pull request into `main`; the other person reviews it before it goes in.
+  - Each of us develops on our own branch (`matthew`, `soumil`).
+  - To merge, open a pull request into `dev`; the other person reviews it before it goes in. `dev` goes to `prod` by pull request.
+  - After a merge into `dev`, bring your branch up to date: `git fetch`, `git merge origin/dev`, `git push`.
 - **Commit messages:** keep the current style: `feat:`, `fix:`, `chore:`, `cleanup:`.
 - **Never commit secrets.** `.env` is gitignored; `.env.example` shows what's needed.
 - **Testing:** everything is tested through Docker Compose, so frontend, backend, and a sample database run together.

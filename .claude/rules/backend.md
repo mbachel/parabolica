@@ -11,6 +11,6 @@ paths:
 - Async all the way down, and pass the `CancellationToken` through.
 - Background services must catch exceptions inside their loop. An unhandled exception stops the whole app.
 - Store NASCAR responses as raw JSON. Pull fields out when reading.
-- Migrations: `dotnet ef migrations add <Name>` from `app/backend`, default output folder. Never edit or delete a migration that's already on `main`.
+- Migrations: `dotnet ef migrations add <Name>` from `app/backend`, default output folder. Never edit or delete a migration that's already on `dev`.
 - Public types get `///` XML doc comments, matching the existing code.
 - Before using a .NET or EF Core API, read the installed version from `app/backend/Parabolica.Api.csproj`, then look up docs for that version with Context7.

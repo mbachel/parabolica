@@ -125,7 +125,12 @@ npm run dev
 
 ### Workflow
 - **Tasks:** tracked in Jira, project key `PAR`.
-- **Branches:** each developer works on their own branch (`matthew`, `soumil`). Once the repo reorganization (Phase 0) is finished, changes go from a personal branch to `dev` by pull request, then from `dev` to `prod` by pull request. Until then, personal branches merge into `main`. The other developer reviews every pull request.
+- **Branches:** each developer works on their own branch (`matthew`, `soumil`). Changes go from a personal branch to `dev` by pull request, then from `dev` to `prod` by pull request. The other developer reviews every pull request. After a pull request merges into `dev`, bring both personal branches up to date:
+  ```bash
+  git fetch
+  git merge origin/dev
+  git push
+  ```
 - **Commit messages:** prefix style (`feat:`, `fix:`, `chore:`, `cleanup:`, `feat!:`) plus the Jira key, for example `fix: PAR-10 use flag 5 for checkered`. Put the key in pull request titles too.
 - **Decisions:** recorded in [docs/adr/](docs/adr/). See [Team Onboarding](docs/team-onboarding.md) for how the team works.
 

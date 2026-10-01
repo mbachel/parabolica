@@ -102,7 +102,7 @@ Old to new:
 
 - All infrastructure defined in Terraform under `terraform/`
 - App reachable at the production domain through Cloudflare, and the origin can't be reached directly
-- GitHub Actions runs CI on every pull request and deploys on merge to main
+- GitHub Actions runs CI on every pull request and deploys on merge to prod
 - GitHub logs into the cloud without stored keys (OIDC)
 - Infrastructure changes need a human approval
 - One monitoring dashboard and one alert

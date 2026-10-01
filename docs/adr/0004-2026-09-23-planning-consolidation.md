@@ -65,7 +65,7 @@
 **Decision:** The first public deploy is done when (Master Plan, Phase 3):
 - all infrastructure is defined in Terraform under `terraform/`
 - the app is reachable at the production domain through Cloudflare, and the origin can't be reached directly
-- GitHub Actions runs CI on every pull request and deploys on merge
+- GitHub Actions runs CI on every pull request and deploys on merge to `prod` (0007, section 1)
 - GitHub logs into the cloud without stored keys (OIDC)
 - infrastructure changes need a human approval
 - there is one monitoring dashboard and one alert

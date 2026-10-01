@@ -32,7 +32,7 @@ docs/          Planning docs
 - Secrets live in `.env` (copy from `.env.example`). Never read, print or edit `.env`.
 
 ## Conventions
-- Branches: work on your own branch (`matthew`, `soumil`) and merge to `main` by PR, reviewed by the other person. Never commit to `main`. Don't create other branches unless asked.
+- Branches: work on your own branch (`matthew`, `soumil`) and merge to `dev` by PR, reviewed by the other person; `dev` goes to `prod` by PR. After a merge into `dev`, each personal branch catches up with `git fetch`, `git merge origin/dev`, `git push`. Never commit to `dev` or `prod`. Don't create other branches unless asked.
 - Commits: keep the prefix style (`feat:`, `fix:`, `chore:`, `cleanup:`, `feat!:`) and include the Jira key, e.g. `fix: PAR-10 use flag 5 for checkered`. Put the key in PR titles too.
 - Never commit or push unless asked.
 - No secrets in the repo, `.mcp.json`, or Terraform. Use environment variables.
