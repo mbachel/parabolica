@@ -10,9 +10,20 @@ var builder = WebApplication.CreateBuilder(args);
 //scan for [ApiController] and add those controllers to the service collection
 builder.Services.AddControllers();
 
+//identify the app to the NASCAR API on every request
+const string userAgent = "Parabolica/1.0 (+https://github.com/mbachel/parabolica)";
+
 //add services for nascar
-builder.Services.AddHttpClient<NascarApiClient>();
-builder.Services.AddHttpClient<NascarHistoricalApiClient>();
+builder.Services.AddHttpClient<NascarApiClient>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(15);
+    client.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+});
+builder.Services.AddHttpClient<NascarHistoricalApiClient>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(30);
+    client.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+});
 builder.Services.AddScoped<AdminKeyAuthFilter>();
 builder.Services.AddSingleton<NascarCacheService>();
 builder.Services.AddSingleton<NascarLiveRaceDetector>();
@@ -22,16 +33,9 @@ builder.Services.AddDbContext<ParabolicaDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-//allow frontend to call api from different origin
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
+//report app and database health at /health
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<ParabolicaDbContext>();
 // === BUILD PHASE END ===
 
 // === RUN PHASE BEGIN ===
@@ -46,11 +50,11 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-//enable CORS policy
-app.UseCors();
-
 //map controller routes
 app.MapControllers();
+
+//map health check endpoint
+app.MapHealthChecks("/health");
 
 //start listening for API requests
 app.Run();
