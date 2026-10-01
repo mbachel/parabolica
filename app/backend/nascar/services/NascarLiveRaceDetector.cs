@@ -162,7 +162,7 @@ public class NascarLiveRaceDetector
             //   feed freezes, flag_state=3 → isRedFlag=true → _lastChangeAtUtc reset → Active
             //   subsequent polls while suspended → flag_state still 3 → keep resetting → Active
             //   flag lifts, feed advances → advanced=true → Active, _lastChangeAtUtc updated
-            //   race ends, feed freezes with flag_state=4 or lap_number>=laps_in_race → PostRace
+            //   race ends, feed freezes with flag_state=5 (checkered) or lap_number>=laps_in_race → PostRace
             if (flagState == 3)
             {
                 _lastChangeAtUtc = DateTime.UtcNow;
@@ -180,7 +180,8 @@ public class NascarLiveRaceDetector
                 feed.LapsInRace is not null &&
                 feed.LapsInRace > 0 &&
                 feed.LapNumber >= feed.LapsInRace;
-            var checkeredFlag = flagState == 4;
+            //flag 5 is checkered; flag 4 is white (final lap) and must not end the race
+            var checkeredFlag = flagState == 5;
 
             if (raceFinishedDistance || checkeredFlag || frozenFor >= TimeSpan.FromMinutes(45))
             {
