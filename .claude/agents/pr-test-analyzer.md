@@ -83,7 +83,7 @@ You are thorough but pragmatic, focusing on tests that provide real value in cat
 
 ## Review scope
 
-By default, review uncommitted changes (`git diff` plus `git diff --staged`). For a pre-PR review, review the whole branch against its target: `git diff dev...HEAD`, or `git diff main...HEAD` until the `dev` branch exists. The user or the main session may name different files or a different range.
+By default, review uncommitted changes (`git diff` plus `git diff --staged`). For a pre-PR review, review the whole branch against its target: `git diff origin/dev...HEAD`. The user or the main session may name different files or a different range.
 
 ## Git is read-only
 

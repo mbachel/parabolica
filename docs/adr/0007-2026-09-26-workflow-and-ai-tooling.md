@@ -5,17 +5,16 @@
 
 ## 1. Branch flow: personal branch, then dev, then prod
 
-**Status:** Accepted (takes effect once Phase 0 is done)
+**Status:** Accepted (in effect; `main` is retired)
 
-**Decision:** Each developer works on their own branch (`matthew`, `soumil`). Changes go from a personal branch to `dev` by pull request, then from `dev` to `prod` by pull request. The other developer reviews every pull request. Until Phase 0 is finished, personal branches merge into `main` as before.
+**Decision:** Each developer works on their own branch (`matthew`, `soumil`). Changes go from a personal branch to `dev` by pull request, then from `dev` to `prod` by pull request. The other developer reviews every pull request. After a pull request merges into `dev`, each personal branch is brought up to date with `git fetch`, `git merge origin/dev`, `git push`.
 
 **Rejected:** One short-lived branch per Jira work item. It goes around the personal-branch setup.
 
 **Consequences:**
 - Replaces the branch rule in 0004, section 12, and the branch-name convention in 0006, section 2.
 - The Jira key still goes in commit messages and pull request titles.
-- The "Re-clone the renamed repo and recreate the matthew and soumil branches" task still applies. `dev` and `prod` get created when the new flow starts.
-- The Phase 3 requirement "deploys on merge" (0004, section 8) needs its branch updated to match this flow.
+- A merge into `prod` is what deploys (0004, section 8).
 
 ## 2. Git is read-only for AI agents
 

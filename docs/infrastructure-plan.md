@@ -292,10 +292,10 @@ Only `prod` exists. The `environments/` folder keeps room for another environmen
 └── workflows/
     ├── ci.yml               every pull request: build and test backend, lint and build frontend,
     │                        build Docker images, scan them with Trivy
-    ├── cd-backend.yml       merge to main: build, push image, deploy
-    ├── cd-frontend.yml      merge to main: build, push image, deploy
+    ├── cd-backend.yml       merge to prod: build, push image, deploy
+    ├── cd-frontend.yml      merge to prod: build, push image, deploy
     ├── terraform-plan.yml   pull request touching terraform/: plan, post it as a comment
-    └── terraform-apply.yml  merge to main touching terraform/: apply after a person approves
+    └── terraform-apply.yml  merge to prod touching terraform/: apply after a person approves
 ```
 
 - **Separate workflow files:** the reference layout uses one `ci-cd.yml`. Splitting it lets backend, frontend, and infrastructure changes each run only their own pipeline.
